@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class Main {
     public static final Scanner stdin = new Scanner(System.in);
+
     public static void main(String[] args) {
         System.out.print("Enter how many numbers you want to enter: ");
         int size = stdin.nextInt();
-
 
 
         int[] array = new int[size];
@@ -20,44 +20,35 @@ public class Main {
 
         while (lives > 0) {
 
-        System.out.print("\nSecond players guess: ");
-        int secondUserGuess = stdin.nextInt();
+            System.out.print("\nSecond players guess: ");
+            int secondUserGuess = stdin.nextInt();
 
-        boolean found = false;
-        for (int j : array) {
-            if (j == secondUserGuess) {
-                found = true;
-                break;
+            boolean found = false;
+            for (int j : array) {
+                if (j == secondUserGuess) {
+                    found = true;
+                    break;
+                }
             }
-        }
 
 
             if (found) {
                 System.out.print("You've guessed the right number!");
                 break;
             } else {
-                lives --;
+                lives--;
                 if (lives > 0) {
 
 
-                System.out.print("Incorrect guess!\n" + lives + " lives left! - Try again!: " );
-}
-            } if (lives == 0) {
+                    System.out.print("Incorrect guess!\n" + lives + " lives left! - Try again!: ");
+                }
+            }
+            if (lives == 0) {
                 System.out.print("Game over! You have " + lives + " lives left!");
             }
 
         }
 
-
-
-
-        // Not finished yet, still need to incorporate the guesses into if the guess is not correct
-
-
-
-/*        for (int number : array) {
-            System.out.println(number);
-        }*/
 
     }
 }
